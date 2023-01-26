@@ -78,3 +78,4 @@ let goal = sprites.create(img`
     `, SpriteKind.Player)
 goal.setPosition(80, 29)
 controller.moveSprite(goalie, 100, 100)
+goalie.setBounceOnWall(true)
