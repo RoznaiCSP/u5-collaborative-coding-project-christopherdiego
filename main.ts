@@ -1,4 +1,8 @@
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    myBall.throwDart()
+})
 // Don't forget to comment your code as you work!
+let myBall: Dart = null
 // Set a player and postionated in the screen.
 let mexicoPlayer = sprites.create(img`
     . . . . f f f f . . . . . 
@@ -18,10 +22,10 @@ let mexicoPlayer = sprites.create(img`
     . . . f f f f f f . . . . 
     . . . f f . . f f . . . . 
     `, SpriteKind.Player)
-mexicoPlayer.setPosition(80, 103)
+mexicoPlayer.setPosition(80, 108)
 // set a ball for mexicoPlayer to kick
 // 
-let myBall = darts.create(img`
+myBall = darts.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . f f f f . . . . . . 
     . . . . 1 1 f f f f 1 1 . . . . 
@@ -39,3 +43,4 @@ let myBall = darts.create(img`
     . . . . . . f f f f . . . . . . 
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
+myBall.setPosition(80, 95)
