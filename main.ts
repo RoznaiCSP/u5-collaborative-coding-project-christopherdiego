@@ -44,3 +44,5 @@ myBall = darts.create(img`
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
 myBall.setPosition(80, 95)
+myBall.setTrace()
+myBall.controlWithArrowKeys()
