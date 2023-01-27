@@ -4,6 +4,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
 	
 })
+let myBall: Dart = null
 // Don't forget to comment your code as you work!
 scene.setBackgroundColor(7)
 scene.setBackgroundImage(img`
@@ -205,12 +206,7 @@ let goal = sprites.create(img`
     .......................................................
     `, SpriteKind.Player)
 goal.setPosition(80, 29)
-controller.moveSprite(goalie, 100, 100)
 goalie.setBounceOnWall(true)
-forever(function () {
-	
-})
-let myBall: Dart = null
 // Set a player and postionated in the screen.
 let mexicoPlayer = sprites.create(img`
     . . . . f f f f . . . . . 
@@ -232,7 +228,6 @@ let mexicoPlayer = sprites.create(img`
     `, SpriteKind.Player)
 mexicoPlayer.setPosition(80, 108)
 // set a ball for mexicoPlayer to kick
-// 
 myBall = darts.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . f f f f . . . . . . 
@@ -254,3 +249,6 @@ myBall = darts.create(img`
 myBall.setPosition(80, 95)
 myBall.setTrace()
 myBall.controlWithArrowKeys()
+forever(function () {
+	
+})
