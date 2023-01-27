@@ -1,6 +1,9 @@
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     myBall.throwDart()
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
+	
+})
 // Don't forget to comment your code as you work!
 let myBall: Dart = null
 // Set a player and postionated in the screen.
