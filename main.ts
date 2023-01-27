@@ -201,3 +201,6 @@ let goal = sprites.create(img`
 goal.setPosition(80, 29)
 controller.moveSprite(goalie, 100, 100)
 goalie.setBounceOnWall(true)
+forever(function () {
+	
+})
