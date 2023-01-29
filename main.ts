@@ -1,8 +1,17 @@
+namespace SpriteKind {
+    export const goal = SpriteKind.create()
+    export const MxPlayer = SpriteKind.create()
+    export const ball = SpriteKind.create()
+    export const goalie = SpriteKind.create()
+}
+sprites.onOverlap(SpriteKind.goalie, SpriteKind.ball, function (sprite, otherSprite) {
+    game.over(false, effects.dissolve)
+})
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     myBall.throwDart()
 })
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
-	
+sprites.onOverlap(SpriteKind.ball, SpriteKind.goal, function (sprite, otherSprite) {
+    game.over(true, effects.confetti)
 })
 let myBall: Dart = null
 // Don't forget to comment your code as you work!
@@ -146,7 +155,7 @@ let goalie = sprites.create(img`
     2 2 2 8 8 8 8 8 8 2 2 2 
     . . . f f f f f f . . . 
     . . . f f . . f f . . . 
-    `, SpriteKind.Player)
+    `, SpriteKind.goalie)
 goalie.setPosition(80, 11)
 let goal = sprites.create(img`
     1111111111111111111111111111111111111111111111111111111
@@ -204,7 +213,7 @@ let goal = sprites.create(img`
     .......................................................
     .......................................................
     .......................................................
-    `, SpriteKind.Player)
+    `, SpriteKind.goal)
 goal.setPosition(80, 29)
 goalie.setBounceOnWall(true)
 // Set a player and postionated in the screen.
@@ -225,7 +234,7 @@ let mexicoPlayer = sprites.create(img`
     e e f 7 7 1 1 2 2 f e e . 
     . . . f f f f f f . . . . 
     . . . f f . . f f . . . . 
-    `, SpriteKind.Player)
+    `, SpriteKind.MxPlayer)
 mexicoPlayer.setPosition(80, 108)
 // set a ball for mexicoPlayer to kick
 myBall = darts.create(img`
@@ -245,10 +254,17 @@ myBall = darts.create(img`
     . . . . 1 1 f f f f 1 1 . . . . 
     . . . . . . f f f f . . . . . . 
     . . . . . . . . . . . . . . . . 
-    `, SpriteKind.Player)
+    `, SpriteKind.ball)
 myBall.setPosition(80, 95)
 myBall.setTrace()
 myBall.controlWithArrowKeys()
 forever(function () {
-	
+    goalie.x += -9
+    pause(500)
+    goalie.x += 9
+    pause(500)
+    goalie.x += 9
+    pause(500)
+    goalie.x += -9
+    pause(500)
 })
