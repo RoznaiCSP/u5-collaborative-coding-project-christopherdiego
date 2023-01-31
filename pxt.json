@@ -2,19 +2,22 @@
     "name": "U5 Collaborative Coding Project",
     "description": "",
     "dependencies": {
-        "device": "*"
+        "device": "*",
+        "darts": "*"
     },
     "files": [
         "main.blocks",
         "main.ts",
         "README.md",
-        "assets.json"
+        "assets.json",
+        "tilemap.g.jres",
+        "tilemap.g.ts"
     ],
     "testFiles": [
         "test.ts"
     ],
     "targetVersions": {
-        "target": "1.11.37",
+        "target": "1.12.18",
         "targetId": "arcade"
     },
     "supportedTargets": [
