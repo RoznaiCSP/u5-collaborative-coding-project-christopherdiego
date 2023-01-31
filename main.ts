@@ -16,16 +16,18 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.bGoalie, function (sprite, otherSprite) {
     game.over(true, effects.confetti)
 })
-function Goaliemove () {
-    for (let index = 0; index < 10; index++) {
-        goalie.x += -9
-        pause(500)
-        goalie.x += 9
-        pause(500)
-        goalie.x += 9
-        pause(500)
-        goalie.x += -9
-        pause(500)
+function Goaliemove (left: boolean) {
+    if (left) {
+        while (true) {
+            goalie.x += -9
+            pause(500)
+            goalie.x += 9
+            pause(500)
+            goalie.x += 9
+            pause(500)
+            goalie.x += -9
+            pause(500)
+        }
     }
 }
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.secGoal, function (sprite, otherSprite) {
@@ -288,7 +290,7 @@ if (choosePlayer) {
     myBall.setPosition(80, 95)
     myBall.setTrace()
     myBall.controlWithArrowKeys()
-    Goaliemove()
+    Goaliemove(true)
 } else {
     bGoalie = sprites.create(img`
         . . . . f f f f . . . . 
